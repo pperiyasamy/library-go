@@ -261,7 +261,7 @@ func newTestCACertificate(subject pkix.Name, serialNumber int64, validity metav1
 	caCert := &x509.Certificate{
 		Subject: subject,
 
-		SignatureAlgorithm: x509.SHA256WithRSA,
+		SignatureAlgorithm: x509.SHA512WithRSAPSS,
 
 		NotBefore:    currentTime().Add(-1 * time.Second),
 		NotAfter:     currentTime().Add(validity.Duration),

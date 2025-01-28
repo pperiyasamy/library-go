@@ -174,7 +174,7 @@ func NewHubKubeconfigSecret(namespace, name, resourceVersion string, cert *TestC
 }
 
 func NewTestCertWithSubject(subject pkix.Name, duration time.Duration) *TestCert {
-	caKey, err := rsa.GenerateKey(cryptorand.Reader, 2048)
+	caKey, err := rsa.GenerateKey(cryptorand.Reader, 3072)
 	if err != nil {
 		panic(err)
 	}
@@ -184,7 +184,7 @@ func NewTestCertWithSubject(subject pkix.Name, duration time.Duration) *TestCert
 		panic(err)
 	}
 
-	key, err := rsa.GenerateKey(cryptorand.Reader, 2048)
+	key, err := rsa.GenerateKey(cryptorand.Reader, 3072)
 	if err != nil {
 		panic(err)
 	}
